@@ -38,6 +38,10 @@ Automatically opens and scrolls to a specific channel when Discord starts.
 - The plugin works with both guild channels and direct messages
 - The channel will be opened when Discord fully loads (after CONNECTION_OPEN event)
 
+## AI Disclaimer
+
+This plugin was developed with assistance from **Cursor.AI** (Cursor's AI coding assistant). The AI was used to help with code generation, debugging, documentation, and implementation. While AI assistance was utilized, all code and features were reviewed and tested to ensure quality and functionality.
+
 ## License
 
 GPL-3.0-or-later
