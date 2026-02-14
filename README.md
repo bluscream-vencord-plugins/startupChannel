@@ -9,39 +9,32 @@ Automatically opens and scrolls to a specific channel when Discord starts.
 - Works with both guild channels and DMs
 - Configurable channel ID setting
 
-## Installation
 
-1. Copy the `blu-startupChannel` folder to your Vencord `src/userplugins` directory
-2. Rebuild Vencord: `pnpm run build`
-3. Restart Discord
-4. Enable the plugin in Vencord settings
-5. Configure the channel ID you want to open
 
-## Configuration
 
-- **Channel ID**: The ID of the channel to open on startup (leave empty to disable)
-- **Scroll To Bottom**: Automatically scroll to the bottom of the channel after opening (default: true)
-- **Enabled**: Toggle to enable/disable automatic channel opening on startup (default: true)
 
-## Usage
 
-1. Enable the plugin in settings
-2. Enter the channel ID you want to open on startup
-   - To find a channel ID, enable Developer Mode in Discord settings
-   - Right-click on the channel and select "Copy ID"
-   - Paste the ID into the plugin settings
-3. Restart Discord to see it automatically open the configured channel
 
-## Notes
+## Installation 
 
-- Channel IDs are globally unique, so you don't need to specify a server/guild ID
-- The plugin works with both guild channels and direct messages
-- The channel will be opened when Discord fully loads (after CONNECTION_OPEN event)
+### 🪄 Installation Wizard
+The easiest way to install this plugin is to use the **[Plugin Installer Generator](https://bluscream-vencord-plugins.github.io)**. 
+Simply select this plugin from the list and download your custom install script.
 
-## AI Disclaimer
-
-This plugin was developed with assistance from **Cursor.AI** (Cursor's AI coding assistant). The AI was used to help with code generation, debugging, documentation, and implementation. While AI assistance was utilized, all code and features were reviewed and tested to ensure quality and functionality.
-
-## License
-
-Unlicense
+### 💻 Manual Installation (PowerShell)
+Alternatively, you can run this snippet in your Equicord/Vencord source directory:
+```powershell
+$ErrorActionPreference = "Stop"
+winget install -e --id Git.Git
+winget install -e --id OpenJS.NodeJS
+npm install -g pnpm
+git clone https://github.com/Equicord/Equicord Equicord
+New-Item -ItemType Directory -Force -Path "Equicord\src\userplugins" | Out-Null
+git clone https://github.com/bluscream-vencord-plugins/blu-startupChannel.git -b "main" "Equicord\src\userplugins\blu-startupChannel"
+cd "Equicord"
+npm install -g pnpm
+pnpm install --frozen-lockfile
+pnpm build
+pnpm buildWeb
+pnpm inject
+```
