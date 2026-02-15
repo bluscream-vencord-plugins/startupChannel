@@ -1,17 +1,17 @@
-// Authors: Bluscream, Cursor.AI
-// Created at 2026-01-01 06:26:37
-/*
- * Vencord, a Discord client mod
- * Copyright (c) 2025 Vendicated and contributors
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
+export const pluginInfo = {
+    id: "startupChannel",
+    name: "StartupChannel",
+    description: "Automatically opens and scrolls to a specific channel when Discord starts",
+    color: "#5865F2"
+};
 
+// Created at 2026-01-01 06:26:37
 import { definePluginSettings } from "@api/Settings";
 import { Logger } from "@utils/Logger";
 import definePlugin, { OptionType } from "@utils/types";
 import { ChannelRouter, ChannelStore, NavigationRouter, SelectedChannelStore, Toasts } from "@webpack/common";
 
-const logger = new Logger("StartupChannel", "#5865F2");
+const logger = new Logger(pluginInfo.name, pluginInfo.color);
 
 export const settings = definePluginSettings({
     channelId: {
